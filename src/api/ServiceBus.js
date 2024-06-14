@@ -390,7 +390,7 @@ export const deleteUser = async (id) => {
 
 export const getTestOverview = async () => {
     try {
-       await axiosInstance.get(`${URL}/api/test/route`);
+       await axiosInstance.get(`${URL}/api/test/user`);
     } catch (error) {
 console.log(error);
         throw new Error("An error occurred during test");
