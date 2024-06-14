@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://aquaversity-api.azurewebsites.net/";
+const URL = "https://aquaversity-api.azurewebsites.net";
 
 export const login = async (email, password) => {
   try {
