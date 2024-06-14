@@ -1,12 +1,18 @@
 import axios from "axios";
 
+
 const URL = "https://aquaversity-api.azurewebsites.net";
+
+const axiosInstance = axios.create({
+  baseURL: URL,
+  withCredentials: true,
+});
 //const URL = "http://localhost:5050";
 
 export const login = async (email, password) => {
   try {
     // Make a POST request to the backend login endpoint
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       `${URL}/api/users/login`,
       {
         email,
@@ -32,7 +38,7 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
   try {
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       `${URL}/api/users/logout`,
       {},
       {
@@ -51,7 +57,7 @@ export const logout = async () => {
 
 export const register = async (email, password) => {
   try {
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       `${URL}/api/users/register`,
       {
         email,
@@ -73,7 +79,7 @@ export const register = async (email, password) => {
 
 export const getLevelDetails = async (id) => {
   try {
-    const response = await axios.get(`${URL}/level/${id}`,  {
+    const response = await axiosInstance.get(`${URL}/level/${id}`,  {
       withCredentials:true,
     });
     if (response.status === 200 || response.status === 403) {
@@ -88,7 +94,7 @@ export const getLevelDetails = async (id) => {
 
 export const getExamDetails = async (id) => {
   try{
-    const response = await axios.get(`${URL}/level/${id}/Exam`,
+    const response = await axiosInstance.get(`${URL}/level/${id}/Exam`,
     {
       withCredentials:true,
     });
@@ -104,7 +110,7 @@ export const getExamDetails = async (id) => {
 
 export const postAnswer = async (id) => {
   try{
-    const response = await axios.post(`${URL}/level/${id}/Exam`,
+    const response = await axiosInstance.post(`${URL}/level/${id}/Exam`,
     {
        id
     }, 
@@ -123,7 +129,7 @@ export const postAnswer = async (id) => {
 
 export const getAnswers = async (id) => {
     try{
-        const response = await axios.get(`${URL}/level/${id}/answers`,
+        const response = await axiosInstance.get(`${URL}/level/${id}/answers`,
         {
         withCredentials:true,
         });
@@ -140,7 +146,7 @@ export const getAnswers = async (id) => {
 
 export const getQuestions = async (id) => {
     try{
-        const response = await axios.get(`${URL}/level/${id}/questions`,
+        const response = await axiosInstance.get(`${URL}/level/${id}/questions`,
         {
         withCredentials:true,
         });
@@ -158,7 +164,7 @@ export const getQuestions = async (id) => {
 
 export const getLoggedInStatus = async () => {
   try {
-    const response = await axios.get(`${URL}/api/users/status`, {
+    const response = await axiosInstance.get(`${URL}/api/users/status`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -173,7 +179,7 @@ export const getLoggedInStatus = async () => {
 
 export const getUserProgress = async () => {
   try {
-    const response = await axios.get(`${URL}/progress`, {
+    const response = await axiosInstance.get(`${URL}/progress`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -189,7 +195,7 @@ export const getUserProgress = async () => {
 
 export const getRole = async () => {
   try {
-    const response = await axios.get(`${URL}/api/users/role`, {
+    const response = await axiosInstance.get(`${URL}/api/users/role`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -210,7 +216,7 @@ export const getRole = async () => {
 
 export const getLevels = async () => {
   try {
-    const response = await axios.get(`${URL}/api/levels/all`, {
+    const response = await axiosInstance.get(`${URL}/api/levels/all`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -225,7 +231,7 @@ export const getLevels = async () => {
 
 export const updateUser = async (email, password) => {
   try {
-    const response = await axios.put(
+    const response = await axiosInstance.put(
       `${URL}/api/users/user`,
       { email, password },
       {
@@ -244,7 +250,7 @@ export const updateUser = async (email, password) => {
 
 export const getUserEmail = async () => {
   try {
-    const response = await axios.get(`${URL}/api/users/user`, {
+    const response = await axiosInstance.get(`${URL}/api/users/user`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -259,7 +265,7 @@ export const getUserEmail = async () => {
 
 export const postMessage = async (message) => {
   try {
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       `${URL}/api/forum/message`,
       {
         message,
@@ -280,7 +286,7 @@ export const postMessage = async (message) => {
 
 export const getPosts = async () => {
   try {
-    const response = await axios.get(`${URL}/api/forum/messages`, {
+    const response = await axiosInstance.get(`${URL}/api/forum/messages`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -296,7 +302,7 @@ export const getPosts = async () => {
 //api/message/{{id}}/like
 export const sendLike = async (id) => {
   try {
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       `${URL}/api/forum/message/${id}/like`,
       {},
       {
@@ -315,7 +321,7 @@ export const sendLike = async (id) => {
 
 export const getComments = async (id) => {
   try {
-    const response = await axios.get(
+    const response = await axiosInstance.get(
       `${URL}/api/forum/message/${id}/comments`,
       {
         withCredentials: true,
@@ -333,7 +339,7 @@ export const getComments = async (id) => {
 
 export const postComment = async (id, comment) => {
   try {
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       `${URL}/api/forum/message/${id}/comment`,
       {
         comment,
@@ -354,7 +360,7 @@ export const postComment = async (id, comment) => {
 
 export const getUsers = async () => {
   try {
-    const response = await axios.get(`${URL}/api/users/all`, {
+    const response = await axiosInstance.get(`${URL}/api/users/all`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -369,7 +375,7 @@ export const getUsers = async () => {
 
 export const deleteUser = async (id) => {
   try {
-    const response = await axios.delete(`${URL}/api/users/${id}/delete`, {
+    const response = await axiosInstance.delete(`${URL}/api/users/${id}/delete`, {
       withCredentials: true,
     });
     if (response.status === 200) {
@@ -384,7 +390,7 @@ export const deleteUser = async (id) => {
 
 export const getTestOverview = async () => {
     try {
-       await axios.get(`${URL}/api/test/route`);
+       await axiosInstance.get(`${URL}/api/test/route`);
     } catch (error) {
 console.log(error);
         throw new Error("An error occurred during test");
