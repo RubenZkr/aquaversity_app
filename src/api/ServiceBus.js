@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const URL = "https://aquaversity-api.azurewebsites.net";
+const URL = "https://aquaversity-api.azurewebsites.net/";
+//const URL = "http://localhost:5050";
 
 export const login = async (email, password) => {
   try {
@@ -380,3 +381,12 @@ export const deleteUser = async (id) => {
     throw new Error("An error occurred during test");
   }
 };
+
+export const getTestOverview = async () => {
+    try {
+       await axios.get(`${URL}/api/test/route`);
+    } catch (error) {
+console.log(error);
+        throw new Error("An error occurred during test");
+    }
+}
