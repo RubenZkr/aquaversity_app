@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css'
 import {Button, CssBaseline, ThemeProvider} from "@mui/material";
-import { darkTheme, lightTheme } from "./theme/Themes.jsx";
+import { darkTheme, lightTheme } from "./theme/themes.jsx";
 import {createTheme} from "@mui/material/styles";
 import {RouterProvider} from "react-router-dom";
 import {router} from "./routes/Routes.jsx";
-import {ColorContext} from "./theme/Themes.jsx";
+import {ColorContext} from "./theme/themes.jsx";
 import {AuthProvider} from "./services/AuthContext.jsx";
 
 

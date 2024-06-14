@@ -2,7 +2,7 @@ import { Box, IconButton, useTheme } from "@mui/material";
 import Brightness3Icon from '@mui/icons-material/Brightness3';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import React from "react";
-import {ColorContext} from "../theme/Themes.jsx";
+import {ColorContext} from "../theme/themes.jsx";
 
 
 export const SwitchModeButton = () => {
