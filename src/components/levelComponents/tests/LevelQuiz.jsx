@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Container,
     Typography,
     Paper,
     FormControl,
     RadioGroup,
     FormControlLabel,
     Radio,
-    Button,
     Snackbar
 } from '@mui/material';
-import {Form, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import '../LevelOverviewStyles.scss';
-import {getExamDetails, getLevelDetails, getQuestions, postAnswer} from "../../../api/ServiceBus.js";
+import { getLevelDetails, getQuestions, postAnswer} from "../../../api/ServiceBus.js";
 
 
 
