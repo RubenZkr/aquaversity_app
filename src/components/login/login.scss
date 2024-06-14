@@ -1,0 +1,12 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  padding-bottom: 25px;
+}
+.login .input {
+  width: 80%;
+  margin: 3px;
+}
