@@ -58,7 +58,7 @@ export default function Post({ title, text, author,id, date,likesCount }) {
   };
 
   return (
-    <Paper elevation={3} sx={{ p: 2, mb: 2 }}>
+    <Paper className={"post-paper"} elevation={3} sx={{ p: 2, mb: 2 }}>
       <Typography variant="h5" component="h1" sx={{ mb: 1 }}>
         {title}
       </Typography>
