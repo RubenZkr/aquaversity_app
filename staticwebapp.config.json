@@ -1,48 +1,6 @@
 {
-  "routes": [
-    {
-      "route": "/",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/Levels",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/Level/:levelId",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/Level/:levelId/exam",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/login",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/register",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/forum",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/profile",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/admin",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/public/images/*",
-      "rewrite": "/public/images/:levelId"
-    },
-    {
-      "route": "/*",
-      "rewrite": "/index.html"
-    }
-  ]
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["*.{css, svg, js, ts, png, jpeg, jpg, ico}"]
+  }
 }
