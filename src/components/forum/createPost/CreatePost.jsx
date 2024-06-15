@@ -55,7 +55,7 @@ export default function CreatePost({ onPost, darkMode }) {
           }),
         }}
       />
-      <Button variant="contained" color="primary" onClick={handlePost}>
+      <Button  color="primary" onClick={handlePost}>
         Post
       </Button>
     </div>

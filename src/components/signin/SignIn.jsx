@@ -88,7 +88,7 @@ export default function Register() {
         onChange={(e) => setConfirmPassword(e.target.value)}
       />
       {error && <Typography color="error">{error}</Typography>}
-      <Button variant="outlined" onClick={signIn}>
+      <Button  color="primary" variant="contained" onClick={signIn}>
         Register
       </Button>
       <Typography>

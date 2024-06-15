@@ -66,7 +66,6 @@ const LevelInfoCard = () => {
                 </Paper>
                 <Box display="flex" justifyContent="center">
                     <Button
-                        variant="contained"
                         color="primary"
                         onClick={() => navigate(`/Level/${levelId}/Exam`)}
                     >

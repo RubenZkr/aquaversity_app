@@ -36,7 +36,7 @@ const Layout = () => {
         </Container>
       <footer>
         {/* You can add your site's footer here */}
-        <p>© 2024 My Website Footer</p>
+        <p>© 2024 Aquaversity</p>
       </footer>
     </div>
   );

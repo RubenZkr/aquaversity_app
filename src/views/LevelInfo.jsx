@@ -1,7 +1,7 @@
 // show levelQuiz component in this view
 import React from 'react';
 import {useParams} from "react-router-dom";
-import LevelInfoCard from "../components/levelComponents/info/LevelInfoCard.jsx";
+import LevelInfoCard from "../components/level/info/LevelInfoCard.jsx";
 
 const LevelInfo = () => {
     // get levelId from the URL params

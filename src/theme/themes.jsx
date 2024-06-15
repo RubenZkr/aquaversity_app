@@ -11,7 +11,8 @@ export const lightTheme = {
             main: "#79716a",
         },
         typography: {
-            fontFamily: 'Raleway, Arial',
+            // apple font
+            fontFamily: "SF Pro Display, sans-serif",
         },
     },
 };
@@ -24,6 +25,9 @@ export const darkTheme = {
         },
         secondary: {
             main: "#FFEDDF",
+        },
+        typography: {
+            // apple font
         },
     },
 };

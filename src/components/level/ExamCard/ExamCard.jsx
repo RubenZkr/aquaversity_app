@@ -70,6 +70,7 @@ const ExamCard = ({examData}) => {
                     {examData.map((item, index) => (
                      <div key={index} className='exam-item'>
                         <Button
+                            color="primary"
                             variant="outlined"
                             onClick={() => handleAnswerSelect(item.id, item.answer)}
                         >

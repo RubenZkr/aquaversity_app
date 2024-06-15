@@ -78,7 +78,10 @@ const EditUser = () => {
         onChange={(e) => setConfirmPassword(e.target.value)}
       />
 
-      <Button type="submit" variant="outlined">
+      <Button
+          color="primary"
+          type="submit"
+              variant="outlined">
         Update
       </Button>
       {error && <Typography color="error">{error}</Typography>}

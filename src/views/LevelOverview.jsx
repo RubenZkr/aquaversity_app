@@ -1,10 +1,10 @@
 // src/views/LevelOverview.jsx
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams, useLocation} from 'react-router-dom';
-import LevelCard from '../components/levelComponents/levelCard/LevelCard';
-import ExamCard from '../components/levelComponents/ExamCard/ExamCard';
+import LevelCard from '../components/level/levelCard/LevelCard';
+import ExamCard from '../components/level/ExamCard/ExamCard';
 import { Button } from '@mui/material';
-import '../components/levelComponents/LevelOverviewStyles.scss';
+import '../components/level/LevelOverviewStyles.scss';
 import {getExamDetails, getLevelDetails} from "../api/ServiceBus";
 
 const LevelOverview = () => {

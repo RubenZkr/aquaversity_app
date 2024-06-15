@@ -2,6 +2,7 @@ import axios from "axios";
 
 
 const URL = "https://aquaversity-api.azurewebsites.net";
+//const URL = "http://localhost:5050";
 
 const axiosInstance = axios.create({
   baseURL: URL,

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Level from "./Level";
-import "../index.css";
+import "../assets/styles/levels.css";
 import {getLevels} from "../api/ServiceBus.js";
 
 const Levels = () => {

@@ -1,0 +1,20 @@
+/*.levels-block {*/
+/*}*/
+/*.levels {*/
+/*    width: 80vw;*/
+/*    max-width: 1000px;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    flex-direction: row;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+/*.level {*/
+/*    width: 200px;*/
+/*    margin: 5px;*/
+/*    border: gray 1px solid;*/
+/*    border-radius: 3px;*/
+/*}*/
+/*.disabled-level {*/
+/*    background-color: #f0f0f0;*/
+/*}*/

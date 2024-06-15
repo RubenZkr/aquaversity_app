@@ -63,7 +63,7 @@ function Login() {
         error={failedLogin}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={onLogin}>Login</button>
+      <Button variant={"contained"} color="primary" onClick={onLogin}>Login</Button>
       <Typography>
           Don't have an account?
         <Link href="/register">Sign up here!</Link>

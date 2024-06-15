@@ -59,7 +59,7 @@ const LevelEditor = (levelId) => {
                     onChange={(e) => setContent(e.target.value)}
                 />
             </Paper>
-            <Button variant="contained" color="primary" onClick={handleSave}>
+            <Button color="primary" onClick={handleSave}>
                 Save
             </Button>
         </Container>
