@@ -9,7 +9,11 @@
       "rewrite": "/index.html"
     },
     {
-      "route": "/Level/*",
+      "route": "/Level/:levelId",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/Level/:levelId/exam",
       "rewrite": "/index.html"
     },
     {
@@ -33,12 +37,8 @@
       "rewrite": "/index.html"
     },
     {
-      "route": "/Level/:levelId",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/Level/:levelId/exam",
-      "rewrite": "/index.html"
+      "route": "/public/*",
+      "serve": "/public/images/:levelId"
     },
     {
       "route": "/*",
