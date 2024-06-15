@@ -26,8 +26,8 @@ const Home = () => {
       </Box>
       <Box sx={{ py: 5 }}>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <Paper sx={{ p: 3, textAlign: "center" }}>
+          <Grid item xs={12} sm={6} >
+            <Paper  className={"home-paper"}  sx={{ p: 3}}>
               <Typography variant="h6" component="h3" gutterBottom>
                 Learn at Your Own Pace
               </Typography>
@@ -38,7 +38,7 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper sx={{ p: 3, textAlign: "center" }}>
+            <Paper  className={"home-paper"}  sx={{ p: 3}}>
               <Typography variant="h6" component="h3" gutterBottom>
                 Join the Community
               </Typography>
@@ -49,7 +49,7 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper sx={{ p: 3, textAlign: "center" }}>
+            <Paper  className={"home-paper"}  sx={{ p: 3}}>
               <Typography variant="h6" component="h3" gutterBottom>
                 Track Your Progress
               </Typography>
@@ -60,7 +60,7 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper sx={{ p: 3, textAlign: "center" }}>
+            <Paper  className={"home-paper"}  sx={{ p: 3}}>
               <Typography variant="h6" component="h3" gutterBottom>
                 Expert Guidance
               </Typography>

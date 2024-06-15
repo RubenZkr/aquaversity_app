@@ -5,8 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { ArrowForward } from "@mui/icons-material";
-import { Lock } from "@mui/icons-material";
+import "../assets/styles/levels.css";
 
 const level = ({ id, level, title, summary, disabled }) => {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ const level = ({ id, level, title, summary, disabled }) => {
   return (
     <div className="level">
       <Card
-        sx={{ maxWidth: 345, width: "100%" }}
+        sx={{ maxWidth: 345 }}
         className={disabled ? "disabled-level" : "not-disabled-level"}
         raised={true}
       >
@@ -39,17 +38,6 @@ const level = ({ id, level, title, summary, disabled }) => {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          {disabled ? (
-            <IconButton aria-label="locked" disabled>
-              <Lock />
-            </IconButton>
-          ) : (
-            <IconButton onClick={() => handleClick(level)} aria-label="navigate">
-              <ArrowForward />
-            </IconButton>
-          )}
-        </CardActions>
       </Card>
     </div>
   );
