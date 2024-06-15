@@ -5,13 +5,9 @@ import {getTestOverview} from "../api/ServiceBus.js";
 
 const Home = () => {
 
-  const test = () => {
-    getTestOverview().then(r => console.log(r));
-  }
 
   return (
     <Container>
-      <Button onClick={test}>Test</Button>
       <Box sx={{ textAlign: "center", py: 5 }}>
         <Typography variant="h2" component="h1" gutterBottom>
           Welcome to Aquaversity
