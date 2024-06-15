@@ -37,8 +37,8 @@
       "rewrite": "/index.html"
     },
     {
-      "route": "/public/*",
-      "serve": "/public/images/:levelId"
+      "route": "/public/images/*",
+      "rewrite": "/public/images/:levelId"
     },
     {
       "route": "/*",
