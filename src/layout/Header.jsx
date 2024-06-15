@@ -113,7 +113,11 @@ function Header({ mode, toggleColorMode }) {
                     alt="logo of sitemark"
                 />
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-
+                    <MenuItem component={Link} to="/" sx={{ py: '6px', px: '12px' }}>
+                        <Typography variant="body2" color="text.primary">
+                            Homepagina
+                        </Typography>
+                    </MenuItem>
                     <MenuItem component={Link} to="/levels" sx={{ py: '6px', px: '12px' }}>
                         <Typography variant="body2" color="text.primary">
                             Levels
