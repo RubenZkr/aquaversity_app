@@ -49,7 +49,7 @@ const Profile = () => {
         {progress.map((item) => (
           <div key={item.orderNumber} style={{ marginRight: "10px" }}>
             <img
-              src={`../public/images/badges/level_${item.orderNumber}.jpeg`}
+              src={`../images/badges/level_${item.orderNumber}.jpeg`}
               alt="achievement badge"
               width={50}
               style={{ margin: "0px" }}
