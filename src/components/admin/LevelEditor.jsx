@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, TextField, Button, Paper } from '@mui/material';
 import axios from "axios";
-import {getLevelDetails} from "../../api/ServiceBus.js";
+import {getAnswers, getExamDetails, getLevelDetails, getQuestions, patchLevelContent} from "../../api/ServiceBus.js";
 
 const LevelEditor = (levelId) => {
     const [content, setContent] = useState('');
+    const [level, setLevel] = useState('');
     const [loading, setLoading] = useState(true);
 
 
@@ -15,6 +16,7 @@ const LevelEditor = (levelId) => {
                 // fetch data from local md file
                  await getLevelDetails(levelId.levelId).then(response => {
                     setContent(response.data.content)
+                     setLevel(response.data)
                      setLoading(false)
                 }).catch((error) => {
                         console.error('Error fetching data:', error);
@@ -29,25 +31,15 @@ const LevelEditor = (levelId) => {
         fetchLevelData();
     }, [levelId]);
 
-    const handleSave = async () => {
-        try {
-            await fetch(`/info/Level${levelId.levelId}.md`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: content,
-            });
-        } catch (error) {
-            console.error('Error saving content:', error);
-        }
+    const handleSave = async (id, c) => {
+            await patchLevelContent(id, c);
     };
 
     if (loading) return <div>Loading...</div>;
 
     return (
         <Container>
-            <Typography variant="h4" gutterBottom>Edit Level {levelId.levelId} Content</Typography>
+            <Typography variant="h4" gutterBottom>Pas Level {level.title} Content aan</Typography>
             <Paper elevation={3} style={{ padding: '16px', marginBottom: '16px' }}>
                 <TextField
                     label="Level Content"
@@ -59,7 +51,7 @@ const LevelEditor = (levelId) => {
                     onChange={(e) => setContent(e.target.value)}
                 />
             </Paper>
-            <Button color="primary" onClick={handleSave}>
+            <Button variant={"contained"} color="primary" onClick={() => handleSave(level.id, content)}>
                 Save
             </Button>
         </Container>

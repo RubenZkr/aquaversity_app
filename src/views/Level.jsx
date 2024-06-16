@@ -7,10 +7,10 @@ import { CardActionArea, CardActions, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/levels.css";
 
-const level = ({ id, level, title, summary, disabled }) => {
+const level = ({ id, level, title, summary, disabled, isUnlocked }) => {
   const navigate = useNavigate();
   const handleClick = (level) => {
-    if (!disabled) {
+    if (isUnlocked) {
       navigate(`/Level/${id}`);
     }
   };
@@ -18,7 +18,7 @@ const level = ({ id, level, title, summary, disabled }) => {
     <div className="level">
       <Card
         sx={{ maxWidth: 345 }}
-        className={disabled ? "disabled-level" : "not-disabled-level"}
+        className={!isUnlocked ? "disabled-level" : ""}
         raised={true}
       >
         <CardActionArea onClick={handleClick}>
@@ -29,7 +29,7 @@ const level = ({ id, level, title, summary, disabled }) => {
             alt={"photo level" + level}
           />
           <CardContent
-            className={disabled ? "disabled-level" : "not-disabled-level"}
+            className={isUnlocked ? "not-disabled-level" : "disabled-level"}
           >
             <Typography gutterBottom variant="h5" component="div">
               {title}

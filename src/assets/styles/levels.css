@@ -28,6 +28,24 @@
     padding: 16px; /* Optional padding for the container */
 }
 
+@media (max-width: 768px) {
+    .levels {
+        grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for smaller screens */
+    }
+    .level {
+        width: 100%; /* Adjust the width of the cards for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .levels {
+        grid-template-columns: 1fr; /* Adjust the number of columns for mobile screens */
+    }
+    .level {
+        width: 100%; /* Adjust the width of the cards for mobile screens */
+    }
+}
+
 /* Style for each level card */
 .level {
     border-radius: 8px; /* Rounded corners */

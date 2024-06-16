@@ -14,7 +14,7 @@ const EditUser = () => {
     const fetchEmail = async () => {
       try {
         const response = await getUserEmail();
-        setEmail(response.data.email);
+        setEmail(response.data[0].email);
       } catch (error) {
         console.error("Error fetching user email:", error);
       }
@@ -60,7 +60,7 @@ const EditUser = () => {
       {/* label should be email of user */}
       <TextField
         className="field"
-        value={email}
+        value={email || ""}
         onChange={(e) => setEmail(e.target.value)}
       />
       <TextField

@@ -1,8 +1,6 @@
 import axios from "axios";
 
 
-const URL = "https://aquaversity-api.azurewebsites.net";
-//const URL = "http://localhost:5050";
 
 const axiosInstance = axios.create({
   baseURL: URL,
@@ -109,11 +107,11 @@ export const getExamDetails = async (id) => {
   }
 }
 
-export const postAnswer = async (id) => {
+export const postAnswer = async (id, answers) => {
   try{
     const response = await axiosInstance.post(`${URL}/level/${id}/Exam`,
     {
-       id
+        answers
     }, 
     {
       withCredentials:true,
@@ -395,5 +393,35 @@ export const getTestOverview = async () => {
     } catch (error) {
 console.log(error);
         throw new Error("An error occurred during test");
+    }
+}
+
+export const patchLevelContent = async (id, content) => {
+    try {
+        const response = await axiosInstance.patch(`${URL}/level/${id}`, {
+            content,
+        });
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            throw new Error(`Unexpected status code: ${response.status}`);
+        }
+    } catch (error) {
+        throw new Error("An error occurred during patching level content");
+    }
+}
+
+export const addQuestion = async (id, questions) => {
+    try {
+        const response = await axiosInstance.post(`${URL}/level/${id}/questions`, {
+            questions,
+        });
+        if (response.status === 201) {
+            return response.data;
+        } else {
+            throw new Error(`Unexpected status code: ${response.status}`);
+        }
+    } catch (error) {
+        throw new Error("An error occurred during creating questions");
     }
 }

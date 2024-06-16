@@ -28,6 +28,7 @@ const Levels = () => {
             id = {data.id}
             level={data.orderNumber}
             title={data.title}
+            isUnlocked={data.isUnlocked}
             summary={data.content}
             disabled={data.isLockedForGuest}
           />

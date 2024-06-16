@@ -39,10 +39,24 @@ const Profile = () => {
       {isLoggedIn === false && (
         <Alert severity="error">This is an error alert.</Alert>
       )}
+      <h3>Profile page</h3>
       <div className="row">
-        <h3>Profile page</h3>
         <CompletedLevelGraph progress={progress} />
         <EditUser />
+      </div>
+      <h3>Achievements</h3>
+      <div className="row">
+        {progress.map((item) => (
+          <div key={item.orderNumber} style={{ marginRight: "10px" }}>
+            <img
+              src={`../public/images/badges/level_${item.orderNumber}.jpeg`}
+              alt="achievement badge"
+              width={50}
+              style={{ margin: "0px" }}
+            />
+            <p>Level {item.orderNumber}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
