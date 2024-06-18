@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Level from "./Level";
 import "../assets/styles/levels.css";
-import {getLevels} from "../api/ServiceBus.js";
+import { getLevels } from "../api/ServiceBus.js";
 
-const Levels = () => {
+const Levels = (mode) => {
   const [levelData, setLevelData] = useState([]);
 
-    useEffect(() => {
-
-        // Fetch level data from the backend API
-        getLevels().then(response => {
-            setLevelData(response);
-        }).catch((error) => {
-            console.error('Error fetching data:', error);
-        });
-
-
-    }, []);
+  useEffect(() => {
+    // Fetch level data from the backend API
+    getLevels()
+      .then((response) => {
+        setLevelData(response);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   return (
     <div className="levels-block">
@@ -24,8 +23,9 @@ const Levels = () => {
       <div className="levels">
         {levelData.map((data, index) => (
           <Level
+            mode={mode}
             key={index}
-            id = {data.id}
+            id={data.id}
             level={data.orderNumber}
             title={data.title}
             isUnlocked={data.isUnlocked}

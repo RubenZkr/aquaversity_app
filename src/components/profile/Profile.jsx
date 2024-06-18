@@ -4,7 +4,6 @@ import CompletedLevelGraph from "./graphComponent/CompletedLevelGraph";
 import { getLoggedInStatus, getUserProgress } from "../../api/ServiceBus";
 import "./profile.scss";
 import { Alert } from "@mui/material";
-
 const Profile = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(null); // Use state to manage login status
   const [progress, setProgress] = useState([]);
@@ -13,7 +12,6 @@ const Profile = () => {
     try {
       const res = await getLoggedInStatus();
       setIsLoggedIn(res.loggedIn);
-      console.log(isLoggedIn);
     } catch (error) {
       console.error("Error fetching login status:", error);
     }
@@ -49,7 +47,6 @@ const Profile = () => {
         {progress.map((item) => (
           <div key={item.orderNumber} style={{ marginRight: "10px" }}>
             <img
-              src={`../images/badges/level_${item.orderNumber}.jpeg`}
               alt="achievement badge"
               width={50}
               style={{ margin: "0px" }}

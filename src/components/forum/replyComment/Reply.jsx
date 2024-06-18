@@ -7,8 +7,10 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
+import { useTheme } from "@emotion/react";
 
 const ReplyList = ({ comments }) => {
+  const theme = useTheme();
   return (
     <List>
       {comments.map((comment, index) => (
@@ -26,7 +28,15 @@ const ReplyList = ({ comments }) => {
                   <ListItemAvatar>
                     <Avatar>{reply.text.charAt(0)}</Avatar>
                   </ListItemAvatar>
-                  <ListItemText primary={reply.text} />
+                  <ListItemText
+                    primary={reply.text}
+                    primaryTypographyProps={{
+                      sx: {
+                        color:
+                          theme.palette.mode === "dark" ? "white" : "primary",
+                      },
+                    }}
+                  />
                 </ListItem>
               ))}
             </List>

@@ -25,7 +25,7 @@ const level = ({ id, level, title, summary, disabled, isUnlocked }) => {
           <CardMedia
             component="img"
             height="140"
-            image={"../images/level-" + level + ".jpg"}
+            image={"../public/images/level-" + level + ".jpg"}
             alt={"photo level" + level}
           />
           <CardContent
@@ -34,8 +34,7 @@ const level = ({ id, level, title, summary, disabled, isUnlocked }) => {
             <Typography gutterBottom variant="h5" component="div">
               {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-            </Typography>
+            {!isUnlocked && <p>locked</p>}
           </CardContent>
         </CardActionArea>
       </Card>

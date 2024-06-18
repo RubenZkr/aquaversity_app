@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 import { updateUser, getUserEmail } from "../../../api/ServiceBus";
 import "./editUser.scss";
+import { useTheme } from "@emotion/react";
 
 const EditUser = () => {
   const [email, setEmail] = useState("user@example.com");
@@ -9,6 +10,7 @@ const EditUser = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const theme = useTheme();
 
   useEffect(() => {
     const fetchEmail = async () => {
@@ -62,6 +64,17 @@ const EditUser = () => {
         className="field"
         value={email || ""}
         onChange={(e) => setEmail(e.target.value)}
+        InputProps={{
+          style: {
+            color: theme.palette.mode === "dark" ? "black" : "", // Adjust placeholder color based on theme
+          },
+        }}
+        InputLabelProps={{
+          style: {
+            color: theme.palette.mode === "dark" ? "black" : "", // Adjust label color based on theme
+          },
+        }}
+        label="Email"
       />
       <TextField
         className="field"
@@ -69,6 +82,16 @@ const EditUser = () => {
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        InputProps={{
+          style: {
+            color: theme.palette.mode === "dark" ? "black" : "",
+          },
+        }}
+        InputLabelProps={{
+          style: {
+            color: theme.palette.mode === "dark" ? "black" : "",
+          },
+        }}
       />
       <TextField
         className="field"
@@ -76,16 +99,27 @@ const EditUser = () => {
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
+        InputProps={{
+          style: {
+            color: theme.palette.mode === "dark" ? "black" : "",
+          },
+        }}
+        InputLabelProps={{
+          style: {
+            color: theme.palette.mode === "dark" ? "black" : "",
+          },
+        }}
       />
 
       <Button
-          color="primary"
-          type="submit"
-              variant="outlined">
+        color="primary"
+        type="submit"
+        variant={theme.palette.mode === "light" ? "outlined" : "contained"}
+      >
         Update
       </Button>
       {error && <Typography color="error">{error}</Typography>}
-      {message && <Typography color="succes">{message}</Typography>}
+      {message && <Typography color="success">{message}</Typography>}
     </form>
   );
 };

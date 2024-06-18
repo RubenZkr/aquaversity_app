@@ -6,7 +6,6 @@ import Header from "./Header.jsx";
 import { getLoggedInStatus } from "../api/ServiceBus.js";
 
 const Layout = () => {
-
   const [open, setOpen] = React.useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(null);
 
@@ -28,12 +27,12 @@ const Layout = () => {
       <Header isLoggedIn={isLoggedIn} />
       <Toolbar /> {/* Placeholder for the height of AppBar */}
       <SidePanel open={open} setOpen={setOpen} />
-        <Container>
-            <main>
-                <Outlet />
-                {/* This is where the router's content will be displayed */}
-            </main>
-        </Container>
+      <Container>
+        <main>
+          <Outlet />
+          {/* This is where the router's content will be displayed */}
+        </main>
+      </Container>
       <footer>
         {/* You can add your site's footer here */}
         <p>© 2024 Aquaversity</p>

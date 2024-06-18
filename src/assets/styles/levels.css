@@ -19,48 +19,54 @@
 /*    background-color: #f0f0f0;*/
 /*}*/
 
-
 /* Container for the levels */
 .levels {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px; /* Adjust the gap between the cards as needed */
-    padding: 16px; /* Optional padding for the container */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /* Adjust the gap between the cards as needed */
+  padding: 16px; /* Optional padding for the container */
 }
 
 @media (max-width: 768px) {
-    .levels {
-        grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for smaller screens */
-    }
-    .level {
-        width: 100%; /* Adjust the width of the cards for smaller screens */
-    }
+  .levels {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Adjust the number of columns for smaller screens */
+  }
+  .level {
+    width: 100%; /* Adjust the width of the cards for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
-    .levels {
-        grid-template-columns: 1fr; /* Adjust the number of columns for mobile screens */
-    }
-    .level {
-        width: 100%; /* Adjust the width of the cards for mobile screens */
-    }
+  .levels {
+    grid-template-columns: 1fr; /* Adjust the number of columns for mobile screens */
+  }
+  .level {
+    width: 100%; /* Adjust the width of the cards for mobile screens */
+  }
 }
 
 /* Style for each level card */
 .level {
-    border-radius: 8px; /* Rounded corners */
-    padding: 16px; /* Padding inside each card */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Padding inside each card */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Hover effect to increase the size of the card */
 .level:hover {
-    transform: scale(1.1); /* Adjust the scale as needed */
+  transform: scale(1.1); /* Adjust the scale as needed */
 }
 
 .disabled-level {
-    background-color: #d3d3d3; /* Example background color for disabled levels */
-    border: 1px solid #999; /* Example border for disabled levels */
-    cursor: not-allowed; /* Cursor change to indicate disabled state */
-    pointer-events: none; /* Disable pointer events */
+  background-color: #5c5959; /* Example background color for disabled levels */
+  border: 1px solid #999; /* Example border for disabled levels */
+  cursor: not-allowed; /* Cursor change to indicate disabled state */
+  pointer-events: none; /* Disable pointer events */
+}
+
+.disabled-level p {
+  margin: 0;
 }
