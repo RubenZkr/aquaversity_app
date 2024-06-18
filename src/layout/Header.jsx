@@ -108,7 +108,7 @@ function Header({ mode, toggleColorMode }) {
                             }}
                         >
                             <img
-                                src={'src/assets/image.png'}
+                                src={'../images/logo.png'}
                                 style={logoStyle}
                                 alt="logo of sitemark"
                             />
