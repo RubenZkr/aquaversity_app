@@ -25,7 +25,7 @@ const level = ({ id, level, title, summary, disabled, isUnlocked }) => {
           <CardMedia
             component="img"
             height="140"
-            image={"../public/images/level-" + level + ".jpg"}
+            image={"../images/level-" + level + ".jpg"}
             alt={"photo level" + level}
           />
           <CardContent
